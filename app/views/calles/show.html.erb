@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Barrio:</strong>
+  <%= @calle.barrio %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @calle.nombre %>
+</p>
+
+<%= link_to 'Edit', edit_calle_path(@calle), :class=>'btn btn-warning' %> |
+<%= link_to 'Back', calles_path, :class=>'btn btn-secondary' %>

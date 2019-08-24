@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  localidad: one
+  nombre: MyString
+
+two:
+  localidad: two
+  nombre: MyString

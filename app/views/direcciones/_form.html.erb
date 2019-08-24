@@ -1,0 +1,47 @@
+<%= form_with(model: direccion, local: true) do |form| %>
+  <% if direccion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(direccion.errors.count, "error") %> prohibited this direccion from being saved:</h2>
+
+      <ul>
+      <% direccion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :calle_id %>
+    <%= form.text_field :calle_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :nro %>
+    <%= form.number_field :nro, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :pdepto %>
+    <%= form.text_field :pdepto, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :acceso %>
+    <%= form.text_field :acceso, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :gpslat %>
+    <%= form.text_field :gpslat, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :gpslong %>
+    <%= form.text_field :gpslong, :class=>'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Enviar", :class=>'btn btn-danger' %>
+  </div>
+<% end %>

@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Direcciones</h1>
+
+<div class='list-group'>
+  <% @direcciones.each do |direccion| %>
+    <%= link_to direccion.fulldireccion, direccion_path(direccion), :class=>'list-group-item list-group-item-action' %>
+  <% end %>
+</div>
+<br>
+
+<%= link_to 'New Direccion', new_direccion_path, :class=>'btn btn-primary' %>

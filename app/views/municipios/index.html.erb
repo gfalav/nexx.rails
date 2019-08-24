@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Municipios</h1>
+
+<div class='list-group'>
+  <% @municipios.each do |municipio| %>
+    <%= link_to municipio.departamento.nombre+' - '+municipio.nombre, municipio_path(municipio), :class=>'list-group-item list-group-item-action' %>
+  <% end %>
+</div>
+<br>
+
+<%= link_to 'New Municipio', new_municipio_path, :class=>'btn btn-primary' %>

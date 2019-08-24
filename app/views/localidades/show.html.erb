@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Municipio:</strong>
+  <%= @localidad.municipio %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @localidad.nombre %>
+</p>
+
+<%= link_to 'Edit', edit_localidad_path(@localidad), :class=>'btn btn-warning' %> |
+<%= link_to 'Back', localidades_path, :class=>'btn btn-secondary' %>

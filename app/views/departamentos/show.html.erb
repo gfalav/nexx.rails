@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Provincia:</strong>
+  <%= @departamento.provincia %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @departamento.nombre %>
+</p>
+
+<%= link_to 'Edit', edit_departamento_path(@departamento), :class=>'btn btn-warning' %> |
+<%= link_to 'Back', departamentos_path, :class=>'btn btn-secondary' %>

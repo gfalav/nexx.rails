@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Calles</h1>
+
+<div class='list-group'>
+  <% @calles.each do |calle| %>
+    <%= link_to calle.fullcalle, calle_path(calle), :class=>'list-group-item list-group-item-action' %>
+  <% end %>
+</div>
+<br>
+
+<%= link_to 'New Calle', new_calle_path, :class=>'btn btn-primary' %>

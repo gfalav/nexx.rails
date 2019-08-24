@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Barrios</h1>
+
+<div class='list-group'>
+  <% @barrios.each do |barrio| %>
+    <%= link_to barrio.localidad.nombre+' - '+barrio.nombre, barrio_path(barrio), :class=>'list-group-item list-group-item-action' %>
+  <% end %>
+</div>
+<br>
+
+<%= link_to 'New Barrio', new_barrio_path, :class=>'btn btn-primary' %>

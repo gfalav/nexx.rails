@@ -10,10 +10,76 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_24_130422) do
+ActiveRecord::Schema.define(version: 2019_08_24_165318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "barrios", force: :cascade do |t|
+    t.bigint "localidad_id", null: false
+    t.string "nombre"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["localidad_id"], name: "index_barrios_on_localidad_id"
+  end
+
+  create_table "calles", force: :cascade do |t|
+    t.bigint "barrio_id", null: false
+    t.string "nombre"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["barrio_id"], name: "index_calles_on_barrio_id"
+  end
+
+  create_table "departamentos", force: :cascade do |t|
+    t.bigint "provincia_id", null: false
+    t.string "nombre"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["provincia_id"], name: "index_departamentos_on_provincia_id"
+  end
+
+  create_table "direcciones", force: :cascade do |t|
+    t.bigint "calle_id", null: false
+    t.integer "nro"
+    t.string "pdepto"
+    t.string "acceso"
+    t.float "gpslat"
+    t.float "gpslong"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["calle_id"], name: "index_direcciones_on_calle_id"
+  end
+
+  create_table "localidades", force: :cascade do |t|
+    t.bigint "municipio_id", null: false
+    t.string "nombre"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["municipio_id"], name: "index_localidades_on_municipio_id"
+  end
+
+  create_table "municipios", force: :cascade do |t|
+    t.bigint "departamento_id", null: false
+    t.string "nombre"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["departamento_id"], name: "index_municipios_on_departamento_id"
+  end
+
+  create_table "paises", force: :cascade do |t|
+    t.string "nombre"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "provincias", force: :cascade do |t|
+    t.bigint "pais_id", null: false
+    t.string "nombre"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pais_id"], name: "index_provincias_on_pais_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -41,4 +107,11 @@ ActiveRecord::Schema.define(version: 2019_08_24_130422) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "barrios", "localidades"
+  add_foreign_key "calles", "barrios"
+  add_foreign_key "departamentos", "provincias"
+  add_foreign_key "direcciones", "calles"
+  add_foreign_key "localidades", "municipios"
+  add_foreign_key "municipios", "departamentos"
+  add_foreign_key "provincias", "paises"
 end

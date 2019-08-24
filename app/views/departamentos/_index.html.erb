@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Departamentos</h1>
+
+<div class='list-group'>
+  <% @departamentos.each do |departamento| %>
+    <%= link_to departamento.provincia.nombre+' - '+departamento.nombre, departamento_path(departamento), :class=>'list-group-item list-group-item-action' %>
+  <% end %>
+</div>
+<br>
+
+<%= link_to 'New Departamento', new_departamento_path, :class=>'btn btn-primary' %>

@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  calle: one
+  nro: 1
+  pdepto: MyString
+  acceso: MyString
+  gpslat: 1.5
+  gpslong: 1.5
+
+two:
+  calle: two
+  nro: 1
+  pdepto: MyString
+  acceso: MyString
+  gpslat: 1.5
+  gpslong: 1.5

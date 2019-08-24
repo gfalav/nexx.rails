@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Calle:</strong>
+  <%= @direccion.calle %>
+</p>
+
+<p>
+  <strong>Nro:</strong>
+  <%= @direccion.nro %>
+</p>
+
+<p>
+  <strong>Pdepto:</strong>
+  <%= @direccion.pdepto %>
+</p>
+
+<p>
+  <strong>Acceso:</strong>
+  <%= @direccion.acceso %>
+</p>
+
+<p>
+  <strong>Gpslat:</strong>
+  <%= @direccion.gpslat %>
+</p>
+
+<p>
+  <strong>Gpslong:</strong>
+  <%= @direccion.gpslong %>
+</p>
+
+<%= link_to 'Edit', edit_direccion_path(@direccion), :class=>'btn btn-warning' %> |
+<%= link_to 'Back', direcciones_path, :class=>'btn btn-secondary' %>
