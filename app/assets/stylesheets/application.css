@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+	font-family: 'Open Sans Condensed', sans-serif;
+	/*background-color: #cfd1d4;*/
+}
+
+.topbar {
+	padding: 0px;
+}
+
+.userbtn {
+	padding-right: 9px;
+}
+
+.btn {
+	margin: 5px;
+}
+
+.leftpanel {
+	;
+}
+
+.imglogo {
+	padding-right: 9px;
+}
