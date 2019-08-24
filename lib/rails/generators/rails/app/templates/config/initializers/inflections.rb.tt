@@ -14,9 +14,3 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
-ActiveSupport::Inflector.inflections(:en) do |inflect|
-	inflect.irregular 'pais', 'paises'
-	inflect.irregular 'provincia', 'provincias'
-	inflect.irregular 'localidad', 'localidades'
-	inflect.irregular 'direccion', 'direcciones'
-end
