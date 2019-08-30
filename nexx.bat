@@ -32,3 +32,9 @@ rails g scaffold edesalfact edesal_id:integer factura_id:integer contratofact_id
 rails g scaffold lecturafact lectura_id:integer factura_id:integer medidor_id:integer tlectura_id:integer flectura:date tconsumo_id:integer lectura:decimal ctelect:decimal consumo:decimal
 rails g scaffold otrocargofact otrocargo_id:integer factura_id:integer edesal_id:integer concepto_id:integer importe:decimal ffactura:date ecargo_id:integer 
 rails g scaffold bonificacionfact bonificacion_id:integer factura_id:integer edesal_id:integer linea:integer porcentaje:decimal fdesde:date fhasta:date
+
+rails g scaffold Clientes apellido1:string apellido2:string nombres:string documento:string tipodoc:string emisordoc:string iibbnro:string
+rails g scaffold Suministro nis:integer calle:references nro:integer pdepto:string auxiliar:string acceso:string gpslong:float gpslat:float
+rails g scaffold Contrato condiva:string tarifa:string potcontgral:integer potcontpico:integer potcontresto:integer potcontvalle:integer
+rails g scaffold Factura nrofactura:string vencimiento:date periodo:integer femision:date flimitepago:date fproxvcto:date 
+rails g scaffold Clientedirecciones calle:references nro:integer pdepto:string auxiliar:string acceso:string gpslong:float gpslat:float
