@@ -10,6 +10,7 @@ class PaisesController < ApplicationController
   # GET /paises/1
   # GET /paises/1.json
   def show
+    @provincias = @pais.provincias
   end
 
   # GET /paises/new

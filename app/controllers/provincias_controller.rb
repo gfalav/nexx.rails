@@ -16,6 +16,7 @@ class ProvinciasController < ApplicationController
   # GET /provincias/new
   def new
     @provincia = Provincia.new
+    @provincia.pais_id = params['pais_id']
   end
 
   # GET /provincias/1/edit
