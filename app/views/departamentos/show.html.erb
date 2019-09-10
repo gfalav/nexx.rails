@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Provincia:</strong>
-  <%= @departamento.provincia %>
+  <strong><%= link_to @departamento.provincia.pais.nombre, pais_path(@departamento.provincia.pais) %> - </strong>
+  <strong><%= link_to @departamento.provincia.nombre, provincia_path(@departamento.provincia) %></strong>
 </p>
 
 <p>
-  <strong>Nombre:</strong>
+  <strong>Departamento:</strong>
   <%= @departamento.nombre %>
 </p>
 

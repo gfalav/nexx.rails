@@ -15,6 +15,7 @@ class DepartamentosController < ApplicationController
   # GET /departamentos/new
   def new
     @departamento = Departamento.new
+    @departamento.provincia_id = params['provincia_id']
   end
 
   # GET /departamentos/1/edit
@@ -25,10 +26,11 @@ class DepartamentosController < ApplicationController
   # POST /departamentos.json
   def create
     @departamento = Departamento.new(departamento_params)
+    @provincia = Provincia.find(@departamento.provincia_id)
 
     respond_to do |format|
       if @departamento.save
-        format.html { redirect_to @departamento, notice: 'Departamento was successfully created.' }
+        format.html { redirect_to @provincia, notice: 'Departamento was successfully created.' }
         format.json { render :show, status: :created, location: @departamento }
       else
         format.html { render :new }

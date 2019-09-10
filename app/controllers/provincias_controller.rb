@@ -10,7 +10,7 @@ class ProvinciasController < ApplicationController
   # GET /provincias/1
   # GET /provincias/1.json
   def show
-      @departamentos = Departamento.where(provincia_id: @provincia.id)
+      @departamentos = @provincia.departamentos
   end
 
   # GET /provincias/new
@@ -27,10 +27,11 @@ class ProvinciasController < ApplicationController
   # POST /provincias.json
   def create
     @provincia = Provincia.new(provincia_params)
+    @pais = Pais.find(@provincia.pais_id)
 
     respond_to do |format|
       if @provincia.save
-        format.html { redirect_to @provincia, notice: 'Provincia was successfully created.' }
+        format.html { redirect_to @pais, notice: 'Provincia was successfully created.' }
         format.json { render :show, status: :created, location: @provincia }
       else
         format.html { render :new }
