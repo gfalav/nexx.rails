@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="form-group">
-    <%= form.label :barrio_id %>
-    <%= form.text_field :barrio_id, :class=>'form-control' %>
+    <%= 'Barrio: ' + calle.barrio.nombre %>
+    <%= form.hidden_field :barrio_id, :class=>'form-control' %>
   </div>
 
   <div class="form-group">

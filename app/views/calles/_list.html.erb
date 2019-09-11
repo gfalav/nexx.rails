@@ -1,4 +1,4 @@
-<h1>Calles</h1>
+<h4 class="indexlist">Calles</h4>
 
 <div class='list-group'>
   <% @calles.each do |calle| %>
@@ -7,4 +7,4 @@
 </div>
 <br>
 
-<%= link_to 'New Calle', new_calle_path, :class=>'btn btn-primary' %>
+<%= link_to 'New Calle', {:controller=>'calles', :action=>'new', :barrio_id=>@barrio }, :class=>'btn btn-primary' %>

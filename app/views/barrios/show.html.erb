@@ -1,14 +1,16 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Localidad:</strong>
-  <%= @barrio.localidad %>
+<p class="showitem">
+  <strong>Pais: <%= link_to @barrio.localidad.municipio.departamento.provincia.pais.nombre, pais_path(@barrio.localidad.municipio.departamento.provincia.pais) %> - </strong>
+  <strong>Provincia: <%= link_to @barrio.localidad.municipio.departamento.provincia.nombre, provincia_path(@barrio.localidad.municipio.departamento.provincia) %> - </strong>
+  <strong>Departamento: <%= link_to @barrio.localidad.municipio.departamento.nombre, departamento_path(@barrio.localidad.municipio.departamento) %> - </strong>
+  <strong>Municipio: <%= link_to @barrio.localidad.municipio.nombre, municipio_path(@barrio.localidad.municipio) %> - </strong>
+  <strong>Localidad: <%= link_to @barrio.localidad.nombre, localidad_path(@barrio.localidad) %></strong>
 </p>
 
 <p>
-  <strong>Nombre:</strong>
+  <strong>Barrio:</strong>
   <%= @barrio.nombre %>
 </p>
 
-<%= link_to 'Edit', edit_barrio_path(@barrio), :class=>'btn btn-warning' %> |
-<%= link_to 'Back', barrios_path, :class=>'btn btn-secondary' %>
+<%= link_to 'Edit', edit_barrio_path(@barrio), :class=>'btn btn-warning' %>
+
+<%= render 'calles/list' %>

@@ -10,11 +10,13 @@ class BarriosController < ApplicationController
   # GET /barrios/1
   # GET /barrios/1.json
   def show
+    @calles = @barrio.calles
   end
 
   # GET /barrios/new
   def new
     @barrio = Barrio.new
+    @barrio.localidad_id = params[:localidad_id]
   end
 
   # GET /barrios/1/edit
@@ -25,10 +27,11 @@ class BarriosController < ApplicationController
   # POST /barrios.json
   def create
     @barrio = Barrio.new(barrio_params)
+    @localidad = Localidad.find(@barrio.localidad_id)
 
     respond_to do |format|
       if @barrio.save
-        format.html { redirect_to @barrio, notice: 'Barrio was successfully created.' }
+        format.html { redirect_to @localidad, notice: 'Barrio was successfully created.' }
         format.json { render :show, status: :created, location: @barrio }
       else
         format.html { render :new }

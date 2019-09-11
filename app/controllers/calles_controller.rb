@@ -10,11 +10,13 @@ class CallesController < ApplicationController
   # GET /calles/1
   # GET /calles/1.json
   def show
+
   end
 
   # GET /calles/new
   def new
     @calle = Calle.new
+    @calle.barrio_id = params[:barrio_id]
   end
 
   # GET /calles/1/edit
@@ -25,10 +27,11 @@ class CallesController < ApplicationController
   # POST /calles.json
   def create
     @calle = Calle.new(calle_params)
+    @barrio = Barrio.find(@calle.barrio_id)
 
     respond_to do |format|
       if @calle.save
-        format.html { redirect_to @calle, notice: 'Calle was successfully created.' }
+        format.html { redirect_to @barrio, notice: 'Calle was successfully created.' }
         format.json { render :show, status: :created, location: @calle }
       else
         format.html { render :new }

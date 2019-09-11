@@ -27,7 +27,6 @@ class LocalidadesController < ApplicationController
   # POST /localidades.json
   def create
     @localidad = Localidad.new(localidad_params)
-    @localidad.nombre = @localidad.nombre.capitalize
     @municipio = Municipio.find(@localidad.municipio_id)
 
 

@@ -1,13 +1,15 @@
 <p class="showitem">
   <strong>Pais: <%= link_to @localidad.municipio.departamento.provincia.pais.nombre, pais_path(@localidad.municipio.departamento.provincia.pais) %> - </strong>
   <strong>Provincia: <%= link_to @localidad.municipio.departamento.provincia.nombre, provincia_path(@localidad.municipio.departamento.provincia) %> - </strong>
-  <strong>Departamento: <%= link_to @localidad.municipio.departamento.provincia.nombre, departamento_path(@localidad.municipio.departamento.provincia) %> - </strong>
-  <strong>Departamento: <%= link_to @localidad.municipio.departamento.provincia.nombre, municipio_path(@localidad.municipio.departamento.provincia) %></strong>
+  <strong>Departamento: <%= link_to @localidad.municipio.departamento.nombre, departamento_path(@localidad.municipio.departamento) %> - </strong>
+  <strong>Municipio: <%= link_to @localidad.municipio.nombre, municipio_path(@localidad.municipio) %></strong>
 </p>
 
 <p>
-  <strong>Nombre:</strong>
+  <strong>Localidad:</strong>
   <%= @localidad.nombre %>
 </p>
 
 <%= link_to 'Edit', edit_localidad_path(@localidad), :class=>'btn btn-warning' %>
+
+<%= render 'barrios/list' %>
