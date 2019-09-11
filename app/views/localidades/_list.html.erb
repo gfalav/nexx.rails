@@ -1,4 +1,4 @@
-<h1>Localidades</h1>
+<h4 class="indexlist">Localidades</h4>
 
 <div class='list-group'>
   <% @localidades.each do |localidad| %>
@@ -7,4 +7,4 @@
 </div>
 <br>
 
-<%= link_to 'New Localidad', new_localidad_path, :class=>'btn btn-primary' %>
+<%= link_to 'New Localidad', {:controller=>'localidades', :action=>'new', :municipio_id=>@municipio }, :class=>'btn btn-primary' %>

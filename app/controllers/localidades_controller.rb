@@ -10,11 +10,13 @@ class LocalidadesController < ApplicationController
   # GET /localidades/1
   # GET /localidades/1.json
   def show
+    @barrios = @localidad.barrios
   end
 
   # GET /localidades/new
   def new
     @localidad = Localidad.new
+    @localidad.municipio_id = params[:municipio_id]
   end
 
   # GET /localidades/1/edit
@@ -25,10 +27,13 @@ class LocalidadesController < ApplicationController
   # POST /localidades.json
   def create
     @localidad = Localidad.new(localidad_params)
+    @localidad.nombre = @localidad.nombre.capitalize
+    @municipio = Municipio.find(@localidad.municipio_id)
+
 
     respond_to do |format|
       if @localidad.save
-        format.html { redirect_to @localidad, notice: 'Localidad was successfully created.' }
+        format.html { redirect_to @municipio, notice: 'Localidad was successfully created.' }
         format.json { render :show, status: :created, location: @localidad }
       else
         format.html { render :new }
