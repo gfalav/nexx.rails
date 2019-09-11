@@ -26,7 +26,6 @@ class PaisesController < ApplicationController
   # POST /paises.json
   def create
     @pais = Pais.new(pais_params)
-    @pais.nombre = @pais.nombre.capitalize
 
     respond_to do |format|
       if @pais.save

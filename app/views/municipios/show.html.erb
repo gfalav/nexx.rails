@@ -1,7 +1,7 @@
 <p class="showitem">
   <strong>Pais: <%= link_to @municipio.departamento.provincia.pais.nombre, pais_path(@municipio.departamento.provincia.pais) %> - </strong>
   <strong>Provincia: <%= link_to @municipio.departamento.provincia.nombre, provincia_path(@municipio.departamento.provincia) %> - </strong>
-  <strong>Departamento: <%= link_to @municipio.departamento.provincia.nombre, departamento_path(@municipio.departamento.provincia) %></strong>
+  <strong>Departamento: <%= link_to @municipio.departamento.nombre, departamento_path(@municipio.departamento) %></strong>
 </p>
 
 <p>
