@@ -1,14 +1,12 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Departamento:</strong>
-  <%= @municipio.departamento %>
+<p class="showitem">
+  <strong>Pais: <%= link_to @municipio.departamento.provincia.pais.nombre, pais_path(@municipio.departamento.provincia.pais) %> - </strong>
+  <strong>Provincia: <%= link_to @municipio.departamento.provincia.nombre, provincia_path(@municipio.departamento.provincia) %> - </strong>
+  <strong>Departamento: <%= link_to @municipio.departamento.provincia.nombre, departamento_path(@municipio.departamento.provincia) %></strong>
 </p>
 
 <p>
-  <strong>Nombre:</strong>
+  <strong>Municipio:</strong>
   <%= @municipio.nombre %>
 </p>
 
-<%= link_to 'Edit', edit_municipio_path(@municipio), :class=>'btn btn-warning' %> |
-<%= link_to 'Back', municipios_path, :class=>'btn btn-secondary' %>
+<%= link_to 'Edit', edit_municipio_path(@municipio), :class=>'btn btn-warning' %>

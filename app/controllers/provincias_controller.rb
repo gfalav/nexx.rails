@@ -16,7 +16,7 @@ class ProvinciasController < ApplicationController
   # GET /provincias/new
   def new
     @provincia = Provincia.new
-    @provincia.pais_id = params['pais_id']
+    @provincia.pais_id = params[:pais_id]
   end
 
   # GET /provincias/1/edit
@@ -27,6 +27,7 @@ class ProvinciasController < ApplicationController
   # POST /provincias.json
   def create
     @provincia = Provincia.new(provincia_params)
+    @provincia.nombre = @provincia.nombre.capitalize
     @pais = Pais.find(@provincia.pais_id)
 
     respond_to do |format|

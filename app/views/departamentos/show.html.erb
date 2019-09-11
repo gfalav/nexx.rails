@@ -1,8 +1,6 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong><%= link_to @departamento.provincia.pais.nombre, pais_path(@departamento.provincia.pais) %> - </strong>
-  <strong><%= link_to @departamento.provincia.nombre, provincia_path(@departamento.provincia) %></strong>
+<p class="showitem">
+  <strong>Pais: <%= link_to @departamento.provincia.pais.nombre, pais_path(@departamento.provincia.pais) %> - </strong>
+  <strong>Provincia: <%= link_to @departamento.provincia.nombre, provincia_path(@departamento.provincia) %></strong>
 </p>
 
 <p>
@@ -10,5 +8,6 @@
   <%= @departamento.nombre %>
 </p>
 
-<%= link_to 'Edit', edit_departamento_path(@departamento), :class=>'btn btn-warning' %> |
-<%= link_to 'Back', departamentos_path, :class=>'btn btn-secondary' %>
+<%= link_to 'Edit', edit_departamento_path(@departamento), :class=>'btn btn-warning' %>
+
+<%= render 'municipios/list' %>

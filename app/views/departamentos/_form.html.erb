@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="form-group">
-    <%= form.label :provincia_id %>
-    <%= form.text_field :provincia_id, :class=>'form-control' %>
+    <%= 'Provincia: ' + departamento.provincia.nombre %>
+    <%= form.hidden_field :provincia_id, :class=>'form-control' %>
   </div>
 
   <div class="form-group">

@@ -10,12 +10,13 @@ class DepartamentosController < ApplicationController
   # GET /departamentos/1
   # GET /departamentos/1.json
   def show
+    @municipios = @departamento.municipios
   end
 
   # GET /departamentos/new
   def new
     @departamento = Departamento.new
-    @departamento.provincia_id = params['provincia_id']
+    @departamento.provincia_id = params[:provincia_id]
   end
 
   # GET /departamentos/1/edit
@@ -26,6 +27,7 @@ class DepartamentosController < ApplicationController
   # POST /departamentos.json
   def create
     @departamento = Departamento.new(departamento_params)
+    @departamento.nombre = @departamento.nombre.capitalize
     @provincia = Provincia.find(@departamento.provincia_id)
 
     respond_to do |format|

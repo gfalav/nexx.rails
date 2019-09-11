@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<p>
+<p class="showitem">
   <strong>Pais: <%= link_to @provincia.pais.nombre, pais_path(@provincia.pais) %></strong>
 </p>
 
@@ -9,7 +7,6 @@
   <%= @provincia.nombre %>
 </p>
 
-<%= link_to 'Edit', edit_provincia_path(@provincia), :class=>'btn btn-warning' %> |
-<%= link_to 'Back', provincias_path, :class=>'btn btn-secondary' %>
+<%= link_to 'Edit', edit_provincia_path(@provincia), :class=>'btn btn-warning' %>
 
 <%= render 'departamentos/list' %>

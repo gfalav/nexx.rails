@@ -15,6 +15,7 @@ class MunicipiosController < ApplicationController
   # GET /municipios/new
   def new
     @municipio = Municipio.new
+    @municipio.departamento_id = params[:departamento_id]
   end
 
   # GET /municipios/1/edit
@@ -25,10 +26,12 @@ class MunicipiosController < ApplicationController
   # POST /municipios.json
   def create
     @municipio = Municipio.new(municipio_params)
+    @municipio.nombre = @municipio.nombre.capitalize
+    @departamento = Departamento.find(@municipio.departamento_id)
 
     respond_to do |format|
       if @municipio.save
-        format.html { redirect_to @municipio, notice: 'Municipio was successfully created.' }
+        format.html { redirect_to @departamento, notice: 'Municipio was successfully created.' }
         format.json { render :show, status: :created, location: @municipio }
       else
         format.html { render :new }
