@@ -70,6 +70,7 @@ class PaisesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pais_params
+      params[:pais][:nombre] = params[:pais][:nombre].upcase
       params.require(:pais).permit(:nombre)
     end
 end

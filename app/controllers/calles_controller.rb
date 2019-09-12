@@ -72,6 +72,7 @@ class CallesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def calle_params
+      params[:calle][:nombre] = params[:calle][:nombre].upcase
       params.require(:calle).permit(:barrio_id, :nombre)
     end
 end

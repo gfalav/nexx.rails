@@ -72,6 +72,7 @@ class BarriosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def barrio_params
+      params[:barrio][:nombre] = params[:barrio][:nombre].upcase
       params.require(:barrio).permit(:localidad_id, :nombre)
     end
 end

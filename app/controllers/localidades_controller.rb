@@ -73,6 +73,7 @@ class LocalidadesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def localidad_params
+      params[:localidad][:nombre] = params[:localidad][:nombre].upcase
       params.require(:localidad).permit(:municipio_id, :nombre)
     end
 end

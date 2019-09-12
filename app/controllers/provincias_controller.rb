@@ -27,7 +27,6 @@ class ProvinciasController < ApplicationController
   # POST /provincias.json
   def create
     @provincia = Provincia.new(provincia_params)
-    @provincia.nombre = @provincia.nombre.capitalize
     @pais = Pais.find(@provincia.pais_id)
 
     respond_to do |format|
@@ -73,6 +72,7 @@ class ProvinciasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def provincia_params
+      params[:provincia][:nombre] = params[:provincia][:nombre].upcase
       params.require(:provincia).permit(:pais_id, :nombre)
     end
 end

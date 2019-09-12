@@ -27,7 +27,6 @@ class MunicipiosController < ApplicationController
   # POST /municipios.json
   def create
     @municipio = Municipio.new(municipio_params)
-    @municipio.nombre = @municipio.nombre.capitalize
     @departamento = Departamento.find(@municipio.departamento_id)
 
     respond_to do |format|
@@ -73,6 +72,7 @@ class MunicipiosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def municipio_params
+      params[:municipio][:nombre] = params[:municipio][:nombre].upcase
       params.require(:municipio).permit(:departamento_id, :nombre)
     end
 end
