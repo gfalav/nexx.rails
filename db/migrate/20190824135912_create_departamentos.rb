@@ -6,5 +6,7 @@ class CreateDepartamentos < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+
+    Departamento.create(:id=>1, :provincia_id=>1, :nombre=>'PUEYRREDÓN')
   end
 end

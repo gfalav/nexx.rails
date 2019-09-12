@@ -10,7 +10,7 @@ class MunicipiosController < ApplicationController
   # GET /municipios/1
   # GET /municipios/1.json
   def show
-    @localidades = @municipio.localidades
+    @localidades = @municipio.localidades.sort_by{ |localidad| localidad.nombre }
   end
 
   # GET /municipios/new

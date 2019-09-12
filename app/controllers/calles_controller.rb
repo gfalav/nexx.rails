@@ -4,7 +4,7 @@ class CallesController < ApplicationController
   # GET /calles
   # GET /calles.json
   def index
-    @calles = Calle.all.sort_by { |calle| calle.fullcalle }
+    @calles = Calle.all.sort_by{ |calle| -calle.fullcalle }
   end
 
   # GET /calles/1

@@ -10,7 +10,7 @@ class BarriosController < ApplicationController
   # GET /barrios/1
   # GET /barrios/1.json
   def show
-    @calles = @barrio.calles
+    @calles = @barrio.calles.sort_by{ |calle| calle.fullcalle }
   end
 
   # GET /barrios/new
