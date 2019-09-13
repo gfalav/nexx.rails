@@ -1,5 +1,6 @@
 class DireccionesController < ApplicationController
   before_action :set_direccion, only: [:show, :edit, :update, :destroy]
+  before_action :force_json, only: [:search]
 
   # GET /direcciones
   # GET /direcciones.json
@@ -61,6 +62,10 @@ class DireccionesController < ApplicationController
     end
   end
 
+  def search
+    @calles = Calle.select(:id, :nombre).where("nombre like :nombre", :nombre=>params[:calle] + '%')
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_direccion
@@ -70,5 +75,9 @@ class DireccionesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def direccion_params
       params.require(:direccion).permit(:calle_id, :nro, :pdepto, :acceso, :gpslat, :gpslong)
+    end
+
+    def force_json
+      request.format = :json
     end
 end
