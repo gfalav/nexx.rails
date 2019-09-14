@@ -4,6 +4,6 @@ class Calle < ApplicationRecord
   has_many :direcciones
 
   def fullcalle
-  	return self.barrio.localidad.municipio.nombre + '  -  ' + self.barrio.nombre + '  -  ' + self.nombre
+  	return 'Munic: ' + self.barrio.localidad.municipio.nombre + '  -  Barrio: ' + self.barrio.nombre + '  -  Calle: ' + self.nombre
   end
 end

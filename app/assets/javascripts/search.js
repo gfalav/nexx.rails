@@ -2,8 +2,9 @@ document.addEventListener("turbolinks:load", function() {
 	input = $("#direccion_calle_id")
 
 	var options = {
-		getValue: "nombre",
+		getValue: "fullcalle",
 		url: function(phrase) {
+			phrase = phrase
 			return "/search?calle=" + phrase
 		},
 		categories: [
@@ -18,7 +19,8 @@ document.addEventListener("turbolinks:load", function() {
 			match: {
 				enabled: true
 			}
-		}
+		},
+		theme: "blue"
 	}
 
 	input.easyAutocomplete(options)
