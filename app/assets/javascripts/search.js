@@ -1,5 +1,5 @@
 document.addEventListener("turbolinks:load", function() {
-	input = $("#direccion_calle_id")
+	input = $("#autocomplete")
 
 	var options = {
 		getValue: "fullcalle",
@@ -13,11 +13,15 @@ document.addEventListener("turbolinks:load", function() {
 				header: "<strong>Calles</strong>"
 			}
 		],
-		requestDelay: 50,
+		requestDelay: 500,
 		list: {
 			maxNumberOfElements: 30,
 			match: {
 				enabled: true
+			},
+			onChooseEvent: function() {
+				var valor = $("#autocomplete").getSelectedItemData().id;
+				$("#direccion_calle_id").val(valor).trigger("change");
 			}
 		},
 		theme: "blue"
