@@ -2,20 +2,13 @@ document.addEventListener("turbolinks:load", function() {
 	input = $("#autocomplete")
 
 	var options = {
+		minCharNumber: 2,
 		getValue: "fullcalle",
 		url: function(phrase) {
-			phrase = phrase
 			return "/search?calle=" + phrase
 		},
-		categories: [
-			{
-				listLocation: "calles",
-				header: "<strong>Calles</strong>"
-			}
-		],
-		requestDelay: 500,
 		list: {
-			maxNumberOfElements: 30,
+			maxNumberOfElements: 20,
 			match: {
 				enabled: true
 			},
@@ -24,7 +17,8 @@ document.addEventListener("turbolinks:load", function() {
 				$("#direccion_calle_id").val(valor).trigger("change");
 			}
 		},
-		theme: "blue"
+		theme: "blue",
+		requestDelay: 500
 	}
 
 	input.easyAutocomplete(options)

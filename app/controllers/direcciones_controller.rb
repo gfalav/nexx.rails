@@ -64,7 +64,7 @@ class DireccionesController < ApplicationController
 
   def search
     params[:calle] = params[:calle].upcase
-    @calles = Calle.where("nombre like :nombre", :nombre=>params[:calle] + '%')
+    @calles = Calle.where("nombre like :nombre", :nombre=>params[:calle] + '%').sort_by{ |calle| -calle.fullcalle }
   end
 
   private
