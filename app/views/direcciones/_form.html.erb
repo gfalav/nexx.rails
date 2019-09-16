@@ -14,7 +14,11 @@
   <div class="form-group">
     <%= form.label :calle_id %>
     <%= form.hidden_field :calle_id, :class=>'form-control' %>
-    <%= text_field_tag 'autocomplete', @direccion.calle.nombre, :class=>'form-control' %>
+    <% if @direccion.calle != nil %>
+      <%= text_field_tag 'autocomplete', @direccion.calle.nombre, :class=>'form-control' %>
+    <% else %>
+      <%= text_field_tag 'autocomplete', nil, :class=>'form-control' %>
+    <% end %>
   </div>
 
   <div class="form-group">
