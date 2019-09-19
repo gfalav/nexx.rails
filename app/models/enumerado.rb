@@ -1,0 +1,2 @@
+class Enumerado < ApplicationRecord
+end

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Radical:</strong>
+  <%= @enumerado.radical %>
+</p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @enumerado.codigo %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @enumerado.descripcion %>
+</p>
+
+<p>
+  <strong>Detalle:</strong>
+  <%= @enumerado.detalle %>
+</p>
+
+<%= link_to 'Edit', edit_enumerado_path(@enumerado), :class=>'btn btn-warning' %> |
+<%= link_to 'Back', enumerados_path, :class=>'btn btn-secondary' %>

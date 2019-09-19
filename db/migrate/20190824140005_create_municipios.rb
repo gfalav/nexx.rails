@@ -7,7 +7,5 @@ class CreateMunicipios < ActiveRecord::Migration[6.0]
       t.timestamps
     end
 
-    Municipio.create(:id=>1, :departamento_id=>1, :nombre=>'JUANA KOSLAY')
-    Municipio.create(:id=>2, :departamento_id=>1, :nombre=>'LA PUNTA')
   end
 end

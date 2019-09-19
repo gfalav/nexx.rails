@@ -1,0 +1,37 @@
+<%= form_with(model: enumerado, local: true) do |form| %>
+  <% if enumerado.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(enumerado.errors.count, "error") %> prohibited this enumerado from being saved:</h2>
+
+      <ul>
+      <% enumerado.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :radical %>
+    <%= form.text_field :radical, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :codigo %>
+    <%= form.text_field :codigo, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :descripcion %>
+    <%= form.text_field :descripcion, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :detalle %>
+    <%= form.text_area :detalle, :class=>'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Enviar", :class=>'btn btn-danger' %>
+  </div>
+<% end %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :enumerados
   resources :direcciones
   resources :calles
   resources :barrios
