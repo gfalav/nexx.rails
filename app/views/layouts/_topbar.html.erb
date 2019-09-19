@@ -35,6 +35,7 @@
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <% if user_signed_in? %>
           <%= link_to "Ent Geográficas", paises_path, :class=>"dropdown-item" %>
+          <%= link_to "Enumerados", enumerados_path, :class=>"dropdown-item" %>
         <% end %>
       </div>
     </div>
