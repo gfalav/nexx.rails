@@ -1,0 +1,2 @@
+module FacturapdfHelper
+end

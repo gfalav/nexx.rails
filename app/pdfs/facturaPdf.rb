@@ -37,7 +37,6 @@ class FacturaPdf < Prawn::Document
 	def qrcodigo		
 		qrcode_content = "http://github.com/jabbrwcky/prawn-qrcode"
 		qrcode = RQRCode::QRCode.new(qrcode_content)
-		render_qr_code(qrcode)
 	end
 
 	def fproxvcto
