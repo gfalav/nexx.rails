@@ -5,6 +5,19 @@ class EnumeradosController < ApplicationController
   # GET /enumerados.json
   def index
     @enumerados = Enumerado.all
+
+    respond_to do |format|
+      format.html
+
+      format.pdf do
+        pdf = FacturaPdf.new
+        send_data pdf.render,
+          filename: "export.pdf",
+          type: 'application/pdf',
+          disposition: 'inline'
+      end
+
+    end
   end
 
   # GET /enumerados/1
