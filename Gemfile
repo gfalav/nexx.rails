@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise'
 gem 'prawn'
-
+gem 'prawn-qrcode'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
