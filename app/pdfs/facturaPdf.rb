@@ -40,13 +40,13 @@ class FacturaPdf < Prawn::Document
 
 	def graphbar
 			series = []
-	 		series << Prawn::Graph::Series.new([224,199,33,256,198,602,222,338,226,313,254,279,287],  title: "Periodos", type: :bar)
-			xaxis_labels = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'set', 'oct', 'nov', 'dec', 'ene']
-			graph series, width: 240, height: 100, title: "Ultimos Consumos", at: [10,370], xaxis_labels: xaxis_labels
+	 		series << Prawn::Graph::Series.new( [11,2,3,4,5,6,7,8,9,10,11,12,13],  title: "Periodos", type: :bar)
+			xaxis_labels = ['11','12','13','14','15','16','17','18','19','20','21','22','23','24','22','23','24']
+			graph series, width: 240, height: 100, title: "Ultimos Consumos", at: [12,370], xaxis_labels: xaxis_labels
 	end
 
 	def lecturas
-		bounding_box([17,541], :width=>216, :height=>150) do
+		bounding_box([17,543], :width=>216, :height=>150) do
 			font_size 7
 			data = [ 
 				["<b>Tipo de Consumo</b>", "<b>Lect Ant</b>", "<b>Lect Act</b>", "<b>Cte</b>", "<b>Consumo</b>"],
@@ -59,7 +59,7 @@ class FacturaPdf < Prawn::Document
 			table data do
 				  self.column_widths = [66,40,40,30,40]
 				  self.row_colors = ["F0F0F0", "FFFFFF"]
-				  self.cell_style = { :border_lines => [:solid, :solid, :solid, :solid], :inline_format => true}
+				  self.cell_style = { :border_lines => [:solid, :solid, :solid, :solid], :border_widths => [1,1,1,1], :inline_format => true, :height => 10, :padding => [0,3,0,3] }
 				  column(1..4).align = :right
 				  row(0).align = :center
 			end
