@@ -24,7 +24,9 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise'
 gem 'prawn-svg'
+gem 'prawn-table'
 gem 'prawn-qrcode'
+gem 'prawn-graph'
 gem 'prawn'
 
 # Use Active Storage variant

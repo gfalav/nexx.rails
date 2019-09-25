@@ -32,6 +32,51 @@ class FacturaPdf < Prawn::Document
 		fupb
 		fproxvcto
 		qrcodigo
+		sumelectrico
+		medidor
+		lecturas
+	end
+
+	def lecturas
+		bounding_box([17,541], :width=>216, :height=>100) do
+			font_size 7
+			data = [ 
+				["<b>Tipo de Consumo</b>", "<b>Lect Ant</b>", "<b>Lect Act</b>", "<b>Cte</b>", "<b>Consumo</b>"],
+				["Activa", "00000000", "00000000", "12000", "00000000"],
+				["Activa", "00000000", "00000000", "12000", "0000"],
+				["Activa", "00000000", "00000000", "12000", "00000000"],
+				["Activa", "00000000", "00000000", "12000", "00000000"],
+				["Activa", "00000000", "00000000", "12000", "00000000"],
+				]
+			table data do
+				  self.column_widths = [66,40,40,30,40]
+				  self.row_colors = ["F0F0F0", "FFFFFF"]
+				  self.cell_style = { :border_lines => [:solid, :solid, :solid, :solid], :inline_format => true}
+				  column(1..4).align = :right
+				  row(0).align = :center
+			end
+		end		
+	end
+
+	def medidor
+		bounding_box([18,582], :width=>220, :height=>100) do
+			font_size 10
+			text "<b>Medidor:</b> 505062687 AMPY", :inline_format => true
+			text "<b>Periodo de Consumo:</b> 00/00/0000 al 00/00/0000", :inline_format => true
+			text "Precinto Transparente 486046", :inline_format => true
+		end		
+	end
+
+	def sumelectrico
+		bounding_box([18,672], :width=>220, :height=>100) do
+			font_size 10
+			text "<b>Suministro Eléctrico</b>", :inline_format => true
+			text "Identificación: 1205321", :inline_format => true
+			text "Referencia de Pago: 0.1205321.01-00/00/0000", :inline_format => true
+			text "Domicilio: Cl LOS ZORZALES Nro Puerta 620 SN Sin Barrio LAS CHACRAS", :inline_format => true
+			text "Acceso: ", :inline_format => true
+			text "Tarifa: 1-R - Pot Cont (kW): 2", :inline_format => true
+		end		
 	end
 
 	def qrcodigo		
