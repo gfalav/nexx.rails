@@ -35,8 +35,19 @@ class FacturaPdf < Prawn::Document
 	end
 
 	def qrcodigo		
-		qrcode_content = "http://github.com/jabbrwcky/prawn-qrcode"
+		qrcode_content = "https://www.google.com.ar/maps/@-33.2669193,-66.2363869,20z"
 		qrcode = RQRCode::QRCode.new(qrcode_content)
+		svggr = qrcode.as_svg(
+		  offset: 0,
+		  color: '000',
+		  shape_rendering: 'crispEdges',
+		  module_size: 1.25,
+		  standalone: true
+		)
+		bounding_box([508,762], :width=>300, :height=>100) do
+			svg svggr
+		end	
+
 	end
 
 	def fproxvcto
