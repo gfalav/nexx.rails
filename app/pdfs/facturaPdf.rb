@@ -34,11 +34,19 @@ class FacturaPdf < Prawn::Document
 		qrcodigo
 		sumelectrico
 		medidor
+		graphbar
 		lecturas
 	end
 
+	def graphbar
+			series = []
+	 		series << Prawn::Graph::Series.new([224,199,33,256,198,602,222,338,226,313,254,279,287],  title: "Periodos", type: :bar)
+			xaxis_labels = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'set', 'oct', 'nov', 'dec', 'ene']
+			graph series, width: 240, height: 100, title: "Ultimos Consumos", at: [10,370], xaxis_labels: xaxis_labels
+	end
+
 	def lecturas
-		bounding_box([17,541], :width=>216, :height=>100) do
+		bounding_box([17,541], :width=>216, :height=>150) do
 			font_size 7
 			data = [ 
 				["<b>Tipo de Consumo</b>", "<b>Lect Ant</b>", "<b>Lect Act</b>", "<b>Cte</b>", "<b>Consumo</b>"],
@@ -46,7 +54,7 @@ class FacturaPdf < Prawn::Document
 				["Activa", "00000000", "00000000", "12000", "0000"],
 				["Activa", "00000000", "00000000", "12000", "00000000"],
 				["Activa", "00000000", "00000000", "12000", "00000000"],
-				["Activa", "00000000", "00000000", "12000", "00000000"],
+				["Activa", "00000000", "00000000", "12000", "11111111"]
 				]
 			table data do
 				  self.column_widths = [66,40,40,30,40]
