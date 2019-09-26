@@ -40,9 +40,9 @@ class FacturaPdf < Prawn::Document
 
 	def graphbar
 			series = []
-	 		series << Prawn::Graph::Series.new( [11,2,3,4,5,6,7,8,9,10,11,12,13],  title: "Periodos", type: :bar)
-			xaxis_labels = ['11','12','13','14','15','16','17','18','19','20','21','22','23','24','22','23','24']
-			graph series, width: 240, height: 100, title: "Ultimos Consumos", at: [12,370], xaxis_labels: xaxis_labels
+	 		series << Prawn::Graph::Series.new( [0,1,2,3,4,5,6,7,8,9,10,11,12],  title: "Periodos", type: :bar)
+			xaxis_labels = ['ene','feb','mar','abr','may','jun','jul','ago','set','oct','nov','dic','ene']
+			graph series, width: 240, height: 70, title: "Ultimos Consumos", at: [12,337], xaxis_labels: xaxis_labels
 	end
 
 	def lecturas
