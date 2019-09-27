@@ -1,0 +1,81 @@
+<%= form_with(model: cliente, local: true) do |form| %>
+  <% if cliente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
+
+      <ul>
+      <% cliente.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-sm">
+      <div class="form-group">
+        <%= form.label :apellido %>
+        <%= form.text_field :apellido, :class=>'form-control' %>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="form-group">
+        <%= form.label :apellido2 %>
+        <%= form.text_field :apellido2, :class=>'form-control' %>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="form-group">
+        <%= form.label :nombres %>
+        <%= form.text_field :nombres, :class=>'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <div class="form-group">
+        <%= form.label :documento %>
+        <%= form.text_field :documento, :class=>'form-control' %>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="form-group">
+        <%= form.label :tipodoc_id %>
+        <%= form.collection_select(:tipodoc_id, Enumerado.where("radical = 'tdoc' ").order(:descripcion), :id, :descripcion, {}, { :class=>'form-control' } ) %>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="form-group">
+        <%= form.label :emisordoc_id %>
+        <%= form.collection_select(:emisordoc_id, Enumerado.where("radical = 'emis' ").order(:descripcion), :id, :descripcion, {}, { :class=>'form-control' } ) %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <div class="form-group">
+        <%= form.label :contacto %>
+        <%= form.text_field :contacto, :class=>'form-control' %>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="form-group">
+        <%= form.label :ciiu_id %>
+        <%= form.collection_select(:ciiu_id, Enumerado.where("radical = 'CIIU' ").order(:codigo), :id, :cod_desc, {}, { :class=>'form-control' } ) %>
+      </div>
+    </div>
+    <div class="col-sm">
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <div class="actions">
+    <%= form.submit "Enviar", :class=>'btn btn-danger' %>
+  </div>
+<% end %>
