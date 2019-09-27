@@ -12,7 +12,7 @@ rails g scaffold cliente apellido:string apellido2:string nombres:string documen
 rails g scaffold cliente_telefono cliente:references telefono:decimal tipotel_id:integer
 rails g scaffold cliente_email cliente:references email:string tipoemail_id:integer
 
-rails g scaffold cuentas cliente:references nombre:string dirpostal_id:integer tpago_id:integer timpagado_id:integer tvencimiento_id:integer
+rails g scaffold cuenta cliente:references nombre:string dirpostal_id:integer tpago_id:integer timpagado_id:integer tvencimiento_id:integer
 rails g scaffold contrato cuenta_id:integer nombre:string tcuit_id:integer tiibb_id:integer tperfact_id:integer econtrato_id:integer fcontratoact:date
 rails g scaffold edesal contrato_id:integer tarifa_id:string potvigente:integer fpotvigente:date potoriginal:integer fpotoriginal:date fdetectbadcosfi:date csmofijo:integer eservicio:integer
 rails g scaffold suministro nombre:string edesal_id:integer tmedicion_id:integer tconexion_id:integer ttension_id:integer tfase_id:integer direccion_id:integer
@@ -22,6 +22,7 @@ rails g scaffold factura contrato_id:integer periodo:integer fdesde:date fhasta:
 rails g scaffold linea factura_id:integer concepto_id:integer importe:decimal leyenda:string
 rails g scaffold otrocargo edesal_id:integer concepto_id:integer importe:decimal ffactura:date ecargo_id:integer 
 rails g scaffold bonificacion edesal_id:integer linea:integer porcentaje:decimal fdesde:date fhasta:date
+rails g scaffold documento file:string descripcion:string
 
 rails g scaffold contratofact contrato_id:integer factura_id:integer cuenta_id:integer nombre:string tcuit_id:integer iibb:string tiibb_id:integer tperfact_id:integer econtrato_id:integer
 rails g scaffold edesalfact edesal_id:integer factura_id:integer contratofact_id:integer tarifa_id:string potvigente:integer fpotvigente:date potoriginal:integer fpotoriginal:date fdetectbadcosfi:date csmofijo:integer eservicio:integer
