@@ -1,0 +1,2 @@
+class Suministro < ApplicationRecord
+end

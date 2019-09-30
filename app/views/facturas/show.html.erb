@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Contrato:</strong>
+  <%= @factura.contrato_id %>
+</p>
+
+<p>
+  <strong>Periodo:</strong>
+  <%= @factura.periodo %>
+</p>
+
+<p>
+  <strong>Fdesde:</strong>
+  <%= @factura.fdesde %>
+</p>
+
+<p>
+  <strong>Fhasta:</strong>
+  <%= @factura.fhasta %>
+</p>
+
+<p>
+  <strong>Femision:</strong>
+  <%= @factura.femision %>
+</p>
+
+<p>
+  <strong>Fvcto:</strong>
+  <%= @factura.fvcto %>
+</p>
+
+<p>
+  <strong>Fproxvcto:</strong>
+  <%= @factura.fproxvcto %>
+</p>
+
+<p>
+  <strong>Fupb:</strong>
+  <%= @factura.fupb %>
+</p>
+
+<p>
+  <strong>Nro:</strong>
+  <%= @factura.nro %>
+</p>
+
+<%= link_to 'Edit', edit_factura_path(@factura), :class=>'btn btn-warning' %> |
+<%= link_to 'Back', facturas_path, :class=>'btn btn-secondary' %>

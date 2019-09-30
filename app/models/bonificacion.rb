@@ -1,0 +1,2 @@
+class Bonificacion < ApplicationRecord
+end

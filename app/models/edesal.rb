@@ -1,0 +1,2 @@
+class Edesal < ApplicationRecord
+end

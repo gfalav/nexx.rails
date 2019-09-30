@@ -19,4 +19,7 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
 	inflect.irregular 'provincia', 'provincias'
 	inflect.irregular 'localidad', 'localidades'
 	inflect.irregular 'direccion', 'direcciones'
+	inflect.irregular 'bonificacion', 'bonificaciones'
+	inflect.irregular 'cuenta', 'cuentas'
+	inflect.irregular 'medidor', 'medidores'
 end

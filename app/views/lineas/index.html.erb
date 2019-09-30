@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lineas</h1>
+
+<div class='list-group'>
+  <% @lineas.each do |linea| %>
+    <%= link_to 'Show', linea_path(linea), :class=>'list-group-item list-group-item-action' %>
+  <% end %>
+</div>
+<br>
+
+<%= link_to 'New Linea', new_linea_path, :class=>'btn btn-primary' %>

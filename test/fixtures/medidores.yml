@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  suministro_id: 1
+  tmedidor_id: 1
+  nromedidor: MyString
+  marca_id: 1
+  modelo: MyString
+  corriente: MyString
+  ttension_id: 1
+  tfase_id: 1
+  cteapa: 9.99
+  ffabric: 2019-09-28
+  cperds: 9.99
+
+two:
+  suministro_id: 1
+  tmedidor_id: 1
+  nromedidor: MyString
+  marca_id: 1
+  modelo: MyString
+  corriente: MyString
+  ttension_id: 1
+  tfase_id: 1
+  cteapa: 9.99
+  ffabric: 2019-09-28
+  cperds: 9.99

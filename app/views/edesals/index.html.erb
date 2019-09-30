@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Edesals</h1>
+
+<div class='list-group'>
+  <% @edesals.each do |edesal| %>
+    <%= link_to 'Show', edesal_path(edesal), :class=>'list-group-item list-group-item-action' %>
+  <% end %>
+</div>
+<br>
+
+<%= link_to 'New Edesal', new_edesal_path, :class=>'btn btn-primary' %>

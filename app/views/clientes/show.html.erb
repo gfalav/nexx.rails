@@ -1,37 +1,17 @@
-<p id="notice"><%= notice %></p>
+
 
 <p>
-  <strong>Apellido:</strong>
-  <%= @cliente.apellido %>
-</p>
-
-<p>
-  <strong>Apellido2:</strong>
-  <%= @cliente.apellido2 %>
-</p>
-
-<p>
-  <strong>Nombres:</strong>
-  <%= @cliente.nombres %>
+  <strong>Apellido y Nombre:</strong>
+  <%= @cliente.apellido + ' ' +@cliente.apellido2 + ', ' + @cliente.nombres %>
 </p>
 
 <p>
   <strong>Documento:</strong>
-  <%= @cliente.documento %>
+  <%= @cliente.tipodoc.descripcion + ' ' + @cliente.documento + ' de ' + @cliente.emisordoc.descripcion %>
 </p>
 
 <p>
-  <strong>Tipo de documento:</strong>
-  <%= @cliente.tipodoc.descripcion %>
-</p>
-
-<p>
-  <strong>Emisor:</strong>
-  <%= @cliente.emisordoc.descripcion %>
-</p>
-
-<p>
-  <strong>Contacto:</strong>
+  <strong>Persona de Contacto:</strong>
   <%= @cliente.contacto %>
 </p>
 
@@ -42,3 +22,4 @@
 
 <%= link_to 'Edit', edit_cliente_path(@cliente), :class=>'btn btn-warning' %> |
 <%= link_to 'Back', clientes_path, :class=>'btn btn-secondary' %>
+<%= link_to 'Add Cuenta', {:controller=> :cuentas, :action => :new, :cliente_id => @cliente.id } ,:class=>'btn btn-secondary' %>

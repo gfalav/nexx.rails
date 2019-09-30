@@ -1,0 +1,42 @@
+<%= form_with(model: otrocargo, local: true) do |form| %>
+  <% if otrocargo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(otrocargo.errors.count, "error") %> prohibited this otrocargo from being saved:</h2>
+
+      <ul>
+      <% otrocargo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :edesal_id %>
+    <%= form.number_field :edesal_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :concepto_id %>
+    <%= form.number_field :concepto_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :importe %>
+    <%= form.text_field :importe, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :ffactura %>
+    <%= form.date_select :ffactura, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :ecargo_id %>
+    <%= form.number_field :ecargo_id, :class=>'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Enviar", :class=>'btn btn-danger' %>
+  </div>
+<% end %>

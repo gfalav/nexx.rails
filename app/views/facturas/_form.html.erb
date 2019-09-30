@@ -1,0 +1,62 @@
+<%= form_with(model: factura, local: true) do |form| %>
+  <% if factura.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(factura.errors.count, "error") %> prohibited this factura from being saved:</h2>
+
+      <ul>
+      <% factura.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :contrato_id %>
+    <%= form.number_field :contrato_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :periodo %>
+    <%= form.number_field :periodo, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :fdesde %>
+    <%= form.date_select :fdesde, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :fhasta %>
+    <%= form.date_select :fhasta, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :femision %>
+    <%= form.date_select :femision, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :fvcto %>
+    <%= form.date_select :fvcto, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :fproxvcto %>
+    <%= form.date_select :fproxvcto, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :fupb %>
+    <%= form.date_select :fupb, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :nro %>
+    <%= form.text_field :nro, :class=>'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Enviar", :class=>'btn btn-danger' %>
+  </div>
+<% end %>

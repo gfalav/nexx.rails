@@ -1,0 +1,2 @@
+class Otrocargo < ApplicationRecord
+end

@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Medidores</h1>
+
+<div class='list-group'>
+  <% @medidores.each do |medidor| %>
+    <%= link_to 'Show', medidor_path(medidor), :class=>'list-group-item list-group-item-action' %>
+  <% end %>
+</div>
+<br>
+
+<%= link_to 'New Medidor', new_medidor_path, :class=>'btn btn-primary' %>

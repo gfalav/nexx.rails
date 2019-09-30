@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Factura:</strong>
+  <%= @linea.factura_id %>
+</p>
+
+<p>
+  <strong>Concepto:</strong>
+  <%= @linea.concepto_id %>
+</p>
+
+<p>
+  <strong>Importe:</strong>
+  <%= @linea.importe %>
+</p>
+
+<p>
+  <strong>Leyenda:</strong>
+  <%= @linea.leyenda %>
+</p>
+
+<%= link_to 'Edit', edit_linea_path(@linea), :class=>'btn btn-warning' %> |
+<%= link_to 'Back', lineas_path, :class=>'btn btn-secondary' %>

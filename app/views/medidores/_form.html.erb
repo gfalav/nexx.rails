@@ -1,0 +1,72 @@
+<%= form_with(model: medidor, local: true) do |form| %>
+  <% if medidor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(medidor.errors.count, "error") %> prohibited this medidor from being saved:</h2>
+
+      <ul>
+      <% medidor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :suministro_id %>
+    <%= form.number_field :suministro_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :tmedidor_id %>
+    <%= form.number_field :tmedidor_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :nromedidor %>
+    <%= form.text_field :nromedidor, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :marca_id %>
+    <%= form.number_field :marca_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :modelo %>
+    <%= form.text_field :modelo, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :corriente %>
+    <%= form.text_field :corriente, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :ttension_id %>
+    <%= form.number_field :ttension_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :tfase_id %>
+    <%= form.number_field :tfase_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :cteapa %>
+    <%= form.text_field :cteapa, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :ffabric %>
+    <%= form.date_select :ffabric, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :cperds %>
+    <%= form.text_field :cperds, :class=>'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Enviar", :class=>'btn btn-danger' %>
+  </div>
+<% end %>

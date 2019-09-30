@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Otrocargos</h1>
+
+<div class='list-group'>
+  <% @otrocargos.each do |otrocargo| %>
+    <%= link_to 'Show', otrocargo_path(otrocargo), :class=>'list-group-item list-group-item-action' %>
+  <% end %>
+</div>
+<br>
+
+<%= link_to 'New Otrocargo', new_otrocargo_path, :class=>'btn btn-primary' %>

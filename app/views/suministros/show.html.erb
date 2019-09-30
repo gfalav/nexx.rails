@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @suministro.nombre %>
+</p>
+
+<p>
+  <strong>Edesal:</strong>
+  <%= @suministro.edesal_id %>
+</p>
+
+<p>
+  <strong>Tmedicion:</strong>
+  <%= @suministro.tmedicion_id %>
+</p>
+
+<p>
+  <strong>Tconexion:</strong>
+  <%= @suministro.tconexion_id %>
+</p>
+
+<p>
+  <strong>Ttension:</strong>
+  <%= @suministro.ttension_id %>
+</p>
+
+<p>
+  <strong>Tfase:</strong>
+  <%= @suministro.tfase_id %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @suministro.direccion_id %>
+</p>
+
+<%= link_to 'Edit', edit_suministro_path(@suministro), :class=>'btn btn-warning' %> |
+<%= link_to 'Back', suministros_path, :class=>'btn btn-secondary' %>

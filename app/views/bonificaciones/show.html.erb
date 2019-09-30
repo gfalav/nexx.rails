@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Edesal:</strong>
+  <%= @bonificacion.edesal_id %>
+</p>
+
+<p>
+  <strong>Linea:</strong>
+  <%= @bonificacion.linea %>
+</p>
+
+<p>
+  <strong>Porcentaje:</strong>
+  <%= @bonificacion.porcentaje %>
+</p>
+
+<p>
+  <strong>Fdesde:</strong>
+  <%= @bonificacion.fdesde %>
+</p>
+
+<p>
+  <strong>Fhasta:</strong>
+  <%= @bonificacion.fhasta %>
+</p>
+
+<%= link_to 'Edit', edit_bonificacion_path(@bonificacion), :class=>'btn btn-warning' %> |
+<%= link_to 'Back', bonificaciones_path, :class=>'btn btn-secondary' %>

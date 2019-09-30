@@ -1,0 +1,52 @@
+<%= form_with(model: suministro, local: true) do |form| %>
+  <% if suministro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(suministro.errors.count, "error") %> prohibited this suministro from being saved:</h2>
+
+      <ul>
+      <% suministro.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :edesal_id %>
+    <%= form.number_field :edesal_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :tmedicion_id %>
+    <%= form.number_field :tmedicion_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :tconexion_id %>
+    <%= form.number_field :tconexion_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :ttension_id %>
+    <%= form.number_field :ttension_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :tfase_id %>
+    <%= form.number_field :tfase_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :direccion_id %>
+    <%= form.number_field :direccion_id, :class=>'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Enviar", :class=>'btn btn-danger' %>
+  </div>
+<% end %>

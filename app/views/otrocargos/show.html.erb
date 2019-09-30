@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Edesal:</strong>
+  <%= @otrocargo.edesal_id %>
+</p>
+
+<p>
+  <strong>Concepto:</strong>
+  <%= @otrocargo.concepto_id %>
+</p>
+
+<p>
+  <strong>Importe:</strong>
+  <%= @otrocargo.importe %>
+</p>
+
+<p>
+  <strong>Ffactura:</strong>
+  <%= @otrocargo.ffactura %>
+</p>
+
+<p>
+  <strong>Ecargo:</strong>
+  <%= @otrocargo.ecargo_id %>
+</p>
+
+<%= link_to 'Edit', edit_otrocargo_path(@otrocargo), :class=>'btn btn-warning' %> |
+<%= link_to 'Back', otrocargos_path, :class=>'btn btn-secondary' %>

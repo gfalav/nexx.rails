@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_27_120553) do
+ActiveRecord::Schema.define(version: 2019_09_28_135419) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 2019_09_27_120553) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["localidad_id"], name: "index_barrios_on_localidad_id"
+  end
+
+  create_table "bonificaciones", force: :cascade do |t|
+    t.integer "edesal_id"
+    t.integer "linea"
+    t.decimal "porcentaje"
+    t.date "fdesde"
+    t.date "fhasta"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "calles", force: :cascade do |t|
@@ -44,6 +54,30 @@ ActiveRecord::Schema.define(version: 2019_09_27_120553) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "contratos", force: :cascade do |t|
+    t.integer "cuenta_id"
+    t.string "nombre"
+    t.integer "tcuit_id"
+    t.integer "tiibb_id"
+    t.integer "tperfact_id"
+    t.integer "econtrato_id"
+    t.date "fcontratoact"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "cuentas", force: :cascade do |t|
+    t.bigint "cliente_id", null: false
+    t.string "nombre"
+    t.integer "dirpostal_id"
+    t.integer "tpago_id"
+    t.integer "timpagado_id"
+    t.integer "tvencimiento_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cliente_id"], name: "index_cuentas_on_cliente_id"
+  end
+
   create_table "departamentos", force: :cascade do |t|
     t.bigint "provincia_id", null: false
     t.string "nombre"
@@ -64,11 +98,68 @@ ActiveRecord::Schema.define(version: 2019_09_27_120553) do
     t.index ["calle_id"], name: "index_direcciones_on_calle_id"
   end
 
+  create_table "documentos", force: :cascade do |t|
+    t.string "file"
+    t.string "descripcion"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "edesals", force: :cascade do |t|
+    t.integer "contrato_id"
+    t.string "tarifa_id"
+    t.integer "potvigente"
+    t.date "fpotvigente"
+    t.integer "potoriginal"
+    t.date "fpotoriginal"
+    t.date "fdetectbadcosfi"
+    t.integer "csmofijo"
+    t.integer "eservicio"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "enumerados", force: :cascade do |t|
     t.string "radical"
     t.string "codigo"
     t.string "descripcion"
     t.text "detalle"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "facturas", force: :cascade do |t|
+    t.integer "contrato_id"
+    t.integer "periodo"
+    t.date "fdesde"
+    t.date "fhasta"
+    t.date "femision"
+    t.date "fvcto"
+    t.date "fproxvcto"
+    t.date "fupb"
+    t.string "nro"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "lecturas", force: :cascade do |t|
+    t.integer "medidor_id"
+    t.integer "tlectura_id"
+    t.date "flectura"
+    t.integer "tconsumo_id"
+    t.decimal "lectura"
+    t.decimal "ctelect"
+    t.decimal "consumo"
+    t.integer "electura_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "lineas", force: :cascade do |t|
+    t.integer "factura_id"
+    t.integer "concepto_id"
+    t.decimal "importe"
+    t.string "leyenda"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -81,12 +172,38 @@ ActiveRecord::Schema.define(version: 2019_09_27_120553) do
     t.index ["municipio_id"], name: "index_localidades_on_municipio_id"
   end
 
+  create_table "medidores", force: :cascade do |t|
+    t.integer "suministro_id"
+    t.integer "tmedidor_id"
+    t.string "nromedidor"
+    t.integer "marca_id"
+    t.string "modelo"
+    t.string "corriente"
+    t.integer "ttension_id"
+    t.integer "tfase_id"
+    t.decimal "cteapa"
+    t.date "ffabric"
+    t.decimal "cperds"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "municipios", force: :cascade do |t|
     t.bigint "departamento_id", null: false
     t.string "nombre"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["departamento_id"], name: "index_municipios_on_departamento_id"
+  end
+
+  create_table "otrocargos", force: :cascade do |t|
+    t.integer "edesal_id"
+    t.integer "concepto_id"
+    t.decimal "importe"
+    t.date "ffactura"
+    t.integer "ecargo_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "paises", force: :cascade do |t|
@@ -101,6 +218,18 @@ ActiveRecord::Schema.define(version: 2019_09_27_120553) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["pais_id"], name: "index_provincias_on_pais_id"
+  end
+
+  create_table "suministros", force: :cascade do |t|
+    t.string "nombre"
+    t.integer "edesal_id"
+    t.integer "tmedicion_id"
+    t.integer "tconexion_id"
+    t.integer "ttension_id"
+    t.integer "tfase_id"
+    t.integer "direccion_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -131,6 +260,7 @@ ActiveRecord::Schema.define(version: 2019_09_27_120553) do
 
   add_foreign_key "barrios", "localidades"
   add_foreign_key "calles", "barrios"
+  add_foreign_key "cuentas", "clientes"
   add_foreign_key "departamentos", "provincias"
   add_foreign_key "direcciones", "calles"
   add_foreign_key "localidades", "municipios"

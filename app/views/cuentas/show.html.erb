@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @cuenta.cliente %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @cuenta.nombre %>
+</p>
+
+<p>
+  <strong>Dirpostal:</strong>
+  <%= @cuenta.dirpostal_id %>
+</p>
+
+<p>
+  <strong>Tpago:</strong>
+  <%= @cuenta.tpago_id %>
+</p>
+
+<p>
+  <strong>Timpagado:</strong>
+  <%= @cuenta.timpagado_id %>
+</p>
+
+<p>
+  <strong>Tvencimiento:</strong>
+  <%= @cuenta.tvencimiento_id %>
+</p>
+
+<%= link_to 'Edit', edit_cuenta_path(@cuenta), :class=>'btn btn-warning' %> |
+<%= link_to 'Back', cuentas_path, :class=>'btn btn-secondary' %>

@@ -1,0 +1,52 @@
+<%= form_with(model: contrato, local: true) do |form| %>
+  <% if contrato.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contrato.errors.count, "error") %> prohibited this contrato from being saved:</h2>
+
+      <ul>
+      <% contrato.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :cuenta_id %>
+    <%= form.number_field :cuenta_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :tcuit_id %>
+    <%= form.number_field :tcuit_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :tiibb_id %>
+    <%= form.number_field :tiibb_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :tperfact_id %>
+    <%= form.number_field :tperfact_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :econtrato_id %>
+    <%= form.number_field :econtrato_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :fcontratoact %>
+    <%= form.date_select :fcontratoact, :class=>'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Enviar", :class=>'btn btn-danger' %>
+  </div>
+<% end %>

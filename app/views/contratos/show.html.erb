@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cuenta:</strong>
+  <%= @contrato.cuenta_id %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @contrato.nombre %>
+</p>
+
+<p>
+  <strong>Tcuit:</strong>
+  <%= @contrato.tcuit_id %>
+</p>
+
+<p>
+  <strong>Tiibb:</strong>
+  <%= @contrato.tiibb_id %>
+</p>
+
+<p>
+  <strong>Tperfact:</strong>
+  <%= @contrato.tperfact_id %>
+</p>
+
+<p>
+  <strong>Econtrato:</strong>
+  <%= @contrato.econtrato_id %>
+</p>
+
+<p>
+  <strong>Fcontratoact:</strong>
+  <%= @contrato.fcontratoact %>
+</p>
+
+<%= link_to 'Edit', edit_contrato_path(@contrato), :class=>'btn btn-warning' %> |
+<%= link_to 'Back', contratos_path, :class=>'btn btn-secondary' %>

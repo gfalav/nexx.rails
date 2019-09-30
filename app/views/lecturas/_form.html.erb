@@ -1,0 +1,57 @@
+<%= form_with(model: lectura, local: true) do |form| %>
+  <% if lectura.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lectura.errors.count, "error") %> prohibited this lectura from being saved:</h2>
+
+      <ul>
+      <% lectura.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :medidor_id %>
+    <%= form.number_field :medidor_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :tlectura_id %>
+    <%= form.number_field :tlectura_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :flectura %>
+    <%= form.date_select :flectura, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :tconsumo_id %>
+    <%= form.number_field :tconsumo_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :lectura %>
+    <%= form.text_field :lectura, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :ctelect %>
+    <%= form.text_field :ctelect, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :consumo %>
+    <%= form.text_field :consumo, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :electura_id %>
+    <%= form.number_field :electura_id, :class=>'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Enviar", :class=>'btn btn-danger' %>
+  </div>
+<% end %>

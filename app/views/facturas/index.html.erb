@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Facturas</h1>
+
+<div class='list-group'>
+  <% @facturas.each do |factura| %>
+    <%= link_to 'Show', factura_path(factura), :class=>'list-group-item list-group-item-action' %>
+  <% end %>
+</div>
+<br>
+
+<%= link_to 'New Factura', new_factura_path, :class=>'btn btn-primary' %>

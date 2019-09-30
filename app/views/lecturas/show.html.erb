@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Medidor:</strong>
+  <%= @lectura.medidor_id %>
+</p>
+
+<p>
+  <strong>Tlectura:</strong>
+  <%= @lectura.tlectura_id %>
+</p>
+
+<p>
+  <strong>Flectura:</strong>
+  <%= @lectura.flectura %>
+</p>
+
+<p>
+  <strong>Tconsumo:</strong>
+  <%= @lectura.tconsumo_id %>
+</p>
+
+<p>
+  <strong>Lectura:</strong>
+  <%= @lectura.lectura %>
+</p>
+
+<p>
+  <strong>Ctelect:</strong>
+  <%= @lectura.ctelect %>
+</p>
+
+<p>
+  <strong>Consumo:</strong>
+  <%= @lectura.consumo %>
+</p>
+
+<p>
+  <strong>Electura:</strong>
+  <%= @lectura.electura_id %>
+</p>
+
+<%= link_to 'Edit', edit_lectura_path(@lectura), :class=>'btn btn-warning' %> |
+<%= link_to 'Back', lecturas_path, :class=>'btn btn-secondary' %>

@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lecturas</h1>
+
+<div class='list-group'>
+  <% @lecturas.each do |lectura| %>
+    <%= link_to 'Show', lectura_path(lectura), :class=>'list-group-item list-group-item-action' %>
+  <% end %>
+</div>
+<br>
+
+<%= link_to 'New Lectura', new_lectura_path, :class=>'btn btn-primary' %>

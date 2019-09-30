@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edesal_id: 1
+  linea: 1
+  porcentaje: 9.99
+  fdesde: 2019-09-28
+  fhasta: 2019-09-28
+
+two:
+  edesal_id: 1
+  linea: 1
+  porcentaje: 9.99
+  fdesde: 2019-09-28
+  fhasta: 2019-09-28

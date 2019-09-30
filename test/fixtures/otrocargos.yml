@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edesal_id: 1
+  concepto_id: 1
+  importe: 9.99
+  ffactura: 2019-09-28
+  ecargo_id: 1
+
+two:
+  edesal_id: 1
+  concepto_id: 1
+  importe: 9.99
+  ffactura: 2019-09-28
+  ecargo_id: 1

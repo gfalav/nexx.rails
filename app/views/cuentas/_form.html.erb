@@ -1,0 +1,49 @@
+<%= form_with(model: cuenta, local: true) do |form| %>
+  <% if cuenta.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cuenta.errors.count, "error") %> prohibited this cuenta from being saved:</h2>
+
+      <ul>
+      <% cuenta.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <strong><%= 'Nueva cuenta para ' + @cliente.nombre_completo %></strong>
+
+  <div class="form-group">
+    <%= form.hidden_field :cliente_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :dirpostal_id %>
+    <%= form.number_field :dirpostal_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :tpago_id %>
+    <%= form.number_field :tpago_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :timpagado_id %>
+    <%= form.number_field :timpagado_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :tvencimiento_id %>
+    <%= form.number_field :tvencimiento_id, :class=>'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Enviar", :class=>'btn btn-danger' %>
+  </div>
+<% end %>

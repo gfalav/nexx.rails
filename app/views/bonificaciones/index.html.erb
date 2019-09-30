@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bonificaciones</h1>
+
+<div class='list-group'>
+  <% @bonificaciones.each do |bonificacion| %>
+    <%= link_to 'Show', bonificacion_path(bonificacion), :class=>'list-group-item list-group-item-action' %>
+  <% end %>
+</div>
+<br>
+
+<%= link_to 'New Bonificacion', new_bonificacion_path, :class=>'btn btn-primary' %>

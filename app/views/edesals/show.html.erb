@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Contrato:</strong>
+  <%= @edesal.contrato_id %>
+</p>
+
+<p>
+  <strong>Tarifa:</strong>
+  <%= @edesal.tarifa_id %>
+</p>
+
+<p>
+  <strong>Potvigente:</strong>
+  <%= @edesal.potvigente %>
+</p>
+
+<p>
+  <strong>Fpotvigente:</strong>
+  <%= @edesal.fpotvigente %>
+</p>
+
+<p>
+  <strong>Potoriginal:</strong>
+  <%= @edesal.potoriginal %>
+</p>
+
+<p>
+  <strong>Fpotoriginal:</strong>
+  <%= @edesal.fpotoriginal %>
+</p>
+
+<p>
+  <strong>Fdetectbadcosfi:</strong>
+  <%= @edesal.fdetectbadcosfi %>
+</p>
+
+<p>
+  <strong>Csmofijo:</strong>
+  <%= @edesal.csmofijo %>
+</p>
+
+<p>
+  <strong>Eservicio:</strong>
+  <%= @edesal.eservicio %>
+</p>
+
+<%= link_to 'Edit', edit_edesal_path(@edesal), :class=>'btn btn-warning' %> |
+<%= link_to 'Back', edesals_path, :class=>'btn btn-secondary' %>

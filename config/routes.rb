@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  resources :documentos
+  resources :bonificaciones
+  resources :otrocargos
+  resources :lineas
+  resources :facturas
+  resources :lecturas
+  resources :medidores
+  resources :suministros
+  resources :edesals
+  resources :contratos
+  resources :cuentas
   resources :clientes
   get 'facturapdf/index'
   resources :enumerados

@@ -1,0 +1,62 @@
+<%= form_with(model: edesal, local: true) do |form| %>
+  <% if edesal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(edesal.errors.count, "error") %> prohibited this edesal from being saved:</h2>
+
+      <ul>
+      <% edesal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :contrato_id %>
+    <%= form.number_field :contrato_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :tarifa_id %>
+    <%= form.text_field :tarifa_id, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :potvigente %>
+    <%= form.number_field :potvigente, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :fpotvigente %>
+    <%= form.date_select :fpotvigente, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :potoriginal %>
+    <%= form.number_field :potoriginal, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :fpotoriginal %>
+    <%= form.date_select :fpotoriginal, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :fdetectbadcosfi %>
+    <%= form.date_select :fdetectbadcosfi, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :csmofijo %>
+    <%= form.number_field :csmofijo, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :eservicio %>
+    <%= form.number_field :eservicio, :class=>'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Enviar", :class=>'btn btn-danger' %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<%= form_with(model: documento, local: true) do |form| %>
+  <% if documento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(documento.errors.count, "error") %> prohibited this documento from being saved:</h2>
+
+      <ul>
+      <% documento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :file %>
+    <%= form.text_field :file, :class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :descripcion %>
+    <%= form.text_field :descripcion, :class=>'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Enviar", :class=>'btn btn-danger' %>
+  </div>
+<% end %>
