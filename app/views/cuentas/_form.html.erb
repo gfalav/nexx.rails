@@ -30,22 +30,22 @@
 
   <div class="form-group">
     <%= form.label "Tipo de Pago" %>
-    <%= form.number_field :tpago_id, :class=>'form-control' %>
+    <%= form.collection_select(:tpago_id, Enumerado.where("radical = 'tpago' ").order(:descripcion), :id, :descripcion, {}, { :class=>'form-control' } ) %>
   </div>
 
   <div class="form-group">
     <%= form.label "Tipo de Gestión por Impago" %>
-    <%= form.number_field :timpagado_id, :class=>'form-control' %>
+    <%= form.collection_select(:timpagado_id, Enumerado.where("radical = 'timpagado' ").order(:descripcion), :id, :descripcion, {}, { :class=>'form-control' } ) %>
   </div>
 
   <div class="form-group">
     <%= form.label "Tipo de Vencimiento" %>
-    <%= form.number_field :tvencimiento_id, :class=>'form-control' %>
+    <%= form.collection_select(:tvencimiento_id, Enumerado.where("radical = 'tvcto' ").order(:descripcion), :id, :descripcion, {}, { :class=>'form-control' } ) %>
   </div>
 
   <div class="form-group">
     <%= form.label "Tipo de Envío" %>
-    <%= form.number_field :tenvio_id, :class=>'form-control' %>
+    <%= form.collection_select(:tenvio_id, Enumerado.where("radical = 'tenvio' ").order(:descripcion), :id, :descripcion, {}, { :class=>'form-control' } ) %>
   </div>
 
   <div class="actions">

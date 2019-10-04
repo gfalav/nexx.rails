@@ -71,6 +71,6 @@ class CuentasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cuenta_params
-      params.require(:cuenta).permit(:cliente_id, :nombre, :dirpostal_id, :tpago_id, :timpagado_id, :tvencimiento_id)
+      params.require(:cuenta).permit(:cliente_id, :nombre, :dirpostal_id, :tpago_id, :timpagado_id, :tvencimiento_id, :tenvio_id)
     end
 end

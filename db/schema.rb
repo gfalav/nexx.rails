@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2019_10_04_194007) do
     t.integer "tvencimiento_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "tenvio"
+    t.integer "tenvio_id"
     t.index ["cliente_id"], name: "index_cuentas_on_cliente_id"
   end
 

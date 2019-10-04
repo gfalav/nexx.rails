@@ -1604,3 +1604,19 @@ Enumerado.create(:radical=>'CIIU', :codigo=>'000010', :descripcion=>'Ex - Agente
 Enumerado.create(:radical=>'CIIU', :codigo=>'000011', :descripcion=>'Trabajo Relac. Dependencia', :detalle=>'Trabajo Relac. Dependencia')
 Enumerado.create(:radical=>'CIIU', :codigo=>'000012', :descripcion=>'Sin Actividad Economica', :detalle=>'Sin Actividad Economica')
 Enumerado.create(:radical=>'CIIU', :codigo=>'000013', :descripcion=>'Agricultura Familiar', :detalle=>'Agricultura Familiar')
+
+Enumerado.create(:radical=>'tpago', :codigo=>0, :descripcion=>'En boca de cobro', :detalle=>'')
+Enumerado.create(:radical=>'tpago', :codigo=>0, :descripcion=>'Débido automático', :detalle=>'')
+Enumerado.create(:radical=>'tpago', :codigo=>0, :descripcion=>'Solo Cheque o Transferencia', :detalle=>'')
+
+Enumerado.create(:radical=>'timpagado', :codigo=>0, :descripcion=>'Cortable', :detalle=>'')
+Enumerado.create(:radical=>'timpagado', :codigo=>0, :descripcion=>'No Cortable', :detalle=>'')
+
+Enumerado.create(:radical=>'tenvio', :codigo=>0, :descripcion=>'Factura impresa', :detalle=>'')
+Enumerado.create(:radical=>'tenvio', :codigo=>0, :descripcion=>'Email', :detalle=>'')
+Enumerado.create(:radical=>'tenvio', :codigo=>0, :descripcion=>'Sin Envío', :detalle=>'')
+
+Enumerado.create(:radical=>'tvcto', :codigo=>0, :descripcion=>'Fijo 1', :detalle=>'')
+Enumerado.create(:radical=>'tvcto', :codigo=>0, :descripcion=>'Fijo 2', :detalle=>'')
+Enumerado.create(:radical=>'tvcto', :codigo=>0, :descripcion=>'Calendario', :detalle=>'')
+
