@@ -12,7 +12,7 @@ rails g scaffold cliente apellido:string apellido2:string nombres:string documen
 rails g scaffold cliente_telefono cliente:references telefono:decimal tipotel_id:integer
 rails g scaffold cliente_email cliente:references email:string tipoemail_id:integer
 
-rails g scaffold cuenta cliente:references nombre:string dirpostal_id:integer tpago_id:integer timpagado_id:integer tvencimiento_id:integer
+rails g scaffold cuenta cliente:references nombre:string dirpostal_id:integer tpago_id:integer timpagado_id:integer tvencimiento_id:integer tenvio:integer
 rails g scaffold contrato cuenta_id:integer nombre:string tcuit_id:integer tiibb_id:integer tperfact_id:integer econtrato_id:integer fcontratoact:date
 rails g scaffold edesal contrato_id:integer tarifa_id:string potvigente:integer fpotvigente:date potoriginal:integer fpotoriginal:date fdetectbadcosfi:date csmofijo:integer eservicio:integer
 rails g scaffold suministro nombre:string edesal_id:integer tmedicion_id:integer tconexion_id:integer ttension_id:integer tfase_id:integer direccion_id:integer
